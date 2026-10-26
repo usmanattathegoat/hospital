@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book an Appointment | Northfield Medical Center</title>
+  <meta name="description" content="Book an appointment with a Northfield Medical Center specialist online. Choose your department, doctor, date and time." />
+  <meta name="theme-color" content="#006fc7" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body class="bg-slate-50 font-sans text-slate-700 antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+  <!-- ============ TOP BAR ============ -->
+  <div class="hidden bg-brand-950 text-brand-100 md:block">
+    <div class="container flex h-10 items-center justify-between text-xs">
+      <div class="flex items-center gap-6">
+        <a href="tel:+18005550199" class="flex items-center gap-1.5 font-semibold text-white hover:text-mint-300">
+          <i data-lucide="phone-call" class="h-3.5 w-3.5"></i> Emergency: (800) 555-0199
+        </a>
+        <a href="mailto:care@northfieldmed.org" class="flex items-center gap-1.5 hover:text-white">
+          <i data-lucide="mail" class="h-3.5 w-3.5"></i> care@northfieldmed.org
+        </a>
+        <span class="hidden items-center gap-1.5 lg:flex">
+          <i data-lucide="clock" class="h-3.5 w-3.5"></i> Clinics Mon–Sat 8 AM – 8 PM · ER open 24/7
+        </span>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="#" class="hover:text-white">Patient Portal</a>
+        <a href="#" class="hover:text-white">Careers</a>
+        <a href="#" class="hover:text-white">Pay a Bill</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header id="site-header" class="site-header sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur-lg">
+    <nav class="container flex h-[72px] items-center justify-between" aria-label="Main navigation">
+      <a href="index.html" class="flex items-center gap-2.5" aria-label="Northfield Medical Center home">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-600 to-mint-500 text-white shadow-soft">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>
+        </span>
+        <span class="leading-tight">
+          <span class="block font-display text-lg font-extrabold text-slate-900">Northfield</span>
+          <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-600">Medical Center</span>
+        </span>
+      </a>
+
+      <ul class="hidden items-center gap-1 lg:flex">
+        <li><a href="index.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">Home</a></li>
+        <li><a href="index.html#services" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">Departments</a></li>
+        <li><a href="index.html#about" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">About Us</a></li>
+        <li><a href="index.html#doctors" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">Our Doctors</a></li>
+        <li><a href="#contact" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <a href="appointment.html" aria-current="page" class="hidden items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700 sm:inline-flex">
+          <i data-lucide="calendar-check" class="h-4 w-4"></i> Book Appointment
+        </a>
+        <button id="menu-toggle" type="button" class="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 text-slate-700 lg:hidden" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
+          <span data-icon-open><i data-lucide="menu" class="h-5 w-5"></i></span>
+          <span data-icon-close class="hidden"><i data-lucide="x" class="h-5 w-5"></i></span>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden border-t border-slate-100 bg-white lg:hidden">
+      <ul class="container space-y-1 py-4">
+        <li><a href="index.html" class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-50">Home</a></li>
+        <li><a href="index.html#services" class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-50">Departments</a></li>
+        <li><a href="index.html#about" class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-50">About Us</a></li>
+        <li><a href="index.html#doctors" class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-50">Our Doctors</a></li>
+        <li><a href="#contact" class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-50">Contact</a></li>
+        <li class="pt-2"><a href="tel:+18005550199" class="flex items-center justify-center gap-2 rounded-xl bg-red-50 px-4 py-3 font-semibold text-red-600">
+          <i data-lucide="phone-call" class="h-4 w-4"></i> Emergency: (800) 555-0199</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="relative overflow-hidden bg-brand-950">
+      <div class="bg-dots-light pointer-events-none absolute inset-0"></div>
+      <div class="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-mint-500/20 blur-3xl"></div>
+      <div class="container relative pb-28 pt-14">
+        <nav aria-label="Breadcrumb" class="text-sm text-brand-200">
+          <ol class="flex items-center gap-2">
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
+            <li aria-hidden="true"><i data-lucide="chevron-right" class="h-3.5 w-3.5"></i></li>
+            <li class="font-semibold text-white" aria-current="page">Book Appointment</li>
+          </ol>
+        </nav>
+        <h1 class="mt-5 font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Book an Appointment</h1>
+        <p class="mt-4 max-w-2xl text-lg text-brand-100">Tell us a little about your visit and our care coordinators will confirm your appointment within 2 business hours.</p>
+        <ul class="mt-8 flex flex-wrap gap-3 text-sm">
+          <li class="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-white backdrop-blur"><i data-lucide="clock-3" class="h-4 w-4 text-mint-300"></i> Confirmation within 2 hours</li>
+          <li class="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-white backdrop-blur"><i data-lucide="lock" class="h-4 w-4 text-mint-300"></i> Secure &amp; HIPAA compliant</li>
+          <li class="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-white backdrop-blur"><i data-lucide="badge-check" class="h-4 w-4 text-mint-300"></i> 40+ insurers accepted</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ FORM + SIDEBAR ============ -->
+    <section class="relative -mt-16 pb-20">
+      <div class="container grid gap-8 lg:grid-cols-3">
+
+        <!-- Form card -->
+        <div class="reveal rounded-3xl bg-white p-6 shadow-soft ring-1 ring-slate-100 sm:p-10 lg:col-span-2">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="font-display text-2xl font-bold text-slate-900">Appointment details</h2>
+              <p class="mt-1 text-sm text-slate-500">Fields marked <span class="text-red-500">*</span> are required.</p>
+            </div>
+            <span class="hidden h-12 w-12 place-items-center rounded-2xl bg-brand-50 text-brand-600 sm:grid"><i data-lucide="clipboard-plus" class="h-6 w-6"></i></span>
+          </div>
+
+          <form id="appointment-form" class="mt-8 space-y-10" novalidate>
+
+            <!-- Step 1 -->
+            <fieldset>
+              <legend class="flex items-center gap-3 font-semibold text-slate-900">
+                <span class="grid h-7 w-7 place-items-center rounded-full bg-brand-600 text-xs font-bold text-white">1</span>
+                Patient information
+              </legend>
+              <div class="mt-5 grid gap-5 sm:grid-cols-2">
+                <div data-field class="sm:col-span-2">
+                  <label for="name" class="form-label">Full name <span class="text-red-500">*</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="e.g. Jane Doe" class="form-input" />
+                  <p class="field-error" data-error-for="name" role="alert"></p>
+                </div>
+                <div data-field>
+                  <label for="email" class="form-label">Email address <span class="text-red-500">*</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" class="form-input" />
+                  <p class="field-error" data-error-for="email" role="alert"></p>
+                </div>
+                <div data-field>
+                  <label for="phone" class="form-label">Phone number <span class="text-red-500">*</span></label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567" class="form-input" />
+                  <p class="field-error" data-error-for="phone" role="alert"></p>
+                </div>
+                <div data-field>
+                  <label for="dob" class="form-label">Date of birth</label>
+                  <input id="dob" name="dob" type="date" class="form-input" />
+                </div>
+                <div data-field>
+                  <span class="form-label">Visit type</span>
+                  <div class="grid grid-cols-2 gap-2">
+                    <label class="cursor-pointer">
+                      <input type="radio" name="visitType" value="New patient" class="peer sr-only" checked />
+                      <span class="flex items-center justify-center rounded-xl border border-slate-200 px-3 py-3 text-sm font-medium text-slate-600 transition peer-checked:border-brand-600 peer-checked:bg-brand-50 peer-checked:text-brand-700 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-100">New patient</span>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input type="radio" name="visitType" value="Follow-up" class="peer sr-only" />
+                      <span class="flex items-center justify-center rounded-xl border border-slate-200 px-3 py-3 text-sm font-medium text-slate-600 transition peer-checked:border-brand-600 peer-checked:bg-brand-50 peer-checked:text-brand-700 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-100">Follow-up</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Step 2 -->
+            <fieldset>
+              <legend class="flex items-center gap-3 font-semibold text-slate-900">
+                <span class="grid h-7 w-7 place-items-center rounded-full bg-brand-600 text-xs font-bold text-white">2</span>
+                Department &amp; doctor
+              </legend>
+              <div class="mt-5 grid gap-5 sm:grid-cols-2">
+                <div data-field>
+                  <label for="department" class="form-label">Department <span class="text-red-500">*</span></label>
+                  <select id="department" name="department" class="form-input">
+                    <option value="">Select a department</option>
+                    <option value="general">General Medicine</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="pediatrics">Pediatrics</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="oncology">Oncology</option>
+                    <option value="diagnostics">Diagnostics &amp; Imaging</option>
+                  </select>
+                  <p class="field-error" data-error-for="department" role="alert"></p>
+                </div>
+                <div data-field>
+                  <label for="doctor" class="form-label">Preferred doctor</label>
+                  <select id="doctor" name="doctor" class="form-input" disabled>
+                    <option value="">Select a department first</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Step 3 -->
+            <fieldset>
+              <legend class="flex items-center gap-3 font-semibold text-slate-900">
+                <span class="grid h-7 w-7 place-items-center rounded-full bg-brand-600 text-xs font-bold text-white">3</span>
+                Date &amp; time
+              </legend>
+              <div class="mt-5 grid gap-5">
+                <div data-field class="sm:max-w-xs">
+                  <label for="date" class="form-label">Preferred date <span class="text-red-500">*</span></label>
+                  <input id="date" name="date" type="date" class="form-input" />
+                  <p class="field-error" data-error-for="date" role="alert"></p>
+                </div>
+                <div data-field>
+                  <span class="form-label">Preferred time <span class="text-red-500">*</span></span>
+                  <div class="grid grid-cols-3 gap-2 sm:grid-cols-6" role="radiogroup" aria-label="Preferred time">
+                    <label class="cursor-pointer"><input type="radio" name="time" value="09:00" class="peer sr-only" /><span class="time-slot">09:00 AM</span></label>
+                    <label class="cursor-pointer"><input type="radio" name="time" value="10:30" class="peer sr-only" /><span class="time-slot">10:30 AM</span></label>
+                    <label class="cursor-pointer"><input type="radio" name="time" value="12:00" class="peer sr-only" /><span class="time-slot">12:00 PM</span></label>
+                    <label class="cursor-pointer"><input type="radio" name="time" value="14:30" class="peer sr-only" /><span class="time-slot">02:30 PM</span></label>
+                    <label class="cursor-pointer"><input type="radio" name="time" value="16:00" class="peer sr-only" /><span class="time-slot">04:00 PM</span></label>
+                    <label class="cursor-pointer"><input type="radio" name="time" value="18:00" class="peer sr-only" /><span class="time-slot">06:00 PM</span></label>
+                  </div>
+                  <p class="field-error" data-error-for="time" role="alert"></p>
+                </div>
+                <div data-field>
+                  <label for="reason" class="form-label">Reason for visit</label>
+                  <textarea id="reason" name="reason" rows="4" maxlength="500" placeholder="Briefly describe your symptoms or the purpose of your visit…" class="form-input resize-none"></textarea>
+                  <p class="mt-1.5 text-right text-xs text-slate-400"><span data-char-count>0</span>/500</p>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Consent + submit -->
+            <div class="space-y-6 border-t border-slate-100 pt-8">
+              <div data-field>
+                <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-600">
+                  <input type="checkbox" name="consent" class="mt-0.5 h-5 w-5 shrink-0 rounded border-slate-300 accent-brand-600" />
+                  <span>I agree to the <a href="#" class="font-semibold text-brand-600 hover:underline">Privacy Policy</a> and consent to Northfield Medical Center contacting me about this appointment. <span class="text-red-500">*</span></span>
+                </label>
+                <p class="field-error" data-error-for="consent" role="alert"></p>
+              </div>
+
+              <div class="flex flex-col-reverse items-center justify-between gap-4 sm:flex-row">
+                <p class="flex items-center gap-2 text-xs text-slate-500"><i data-lucide="shield-check" class="h-4 w-4 text-mint-600"></i> Your information is encrypted and never shared.</p>
+                <button type="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto">
+                  <i data-lucide="send" class="h-4 w-4"></i> Request Appointment
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-6">
+          <div class="reveal overflow-hidden rounded-3xl bg-gradient-to-br from-red-600 to-red-500 p-7 text-white shadow-soft" style="--delay:100ms">
+            <div class="flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-xl bg-white/15"><i data-lucide="siren" class="h-5 w-5"></i></span>
+              <h2 class="font-display text-lg font-bold">Medical emergency?</h2>
+            </div>
+            <p class="mt-4 text-sm text-red-50">Don't wait for an appointment. Call our 24/7 emergency line or dial 911 immediately.</p>
+            <a href="tel:+18005550199" class="mt-5 flex items-center justify-center gap-2 rounded-xl bg-white py-3 font-bold text-red-600 transition hover:bg-red-50">
+              <i data-lucide="phone-call" class="h-4 w-4"></i> (800) 555-0199
+            </a>
+          </div>
+
+          <div id="contact" class="reveal scroll-mt-28 rounded-3xl bg-white p-7 shadow-card ring-1 ring-slate-100" style="--delay:180ms">
+            <h2 class="font-display text-lg font-bold text-slate-900">Contact information</h2>
+            <ul class="mt-5 space-y-5 text-sm">
+              <li class="flex gap-4">
+                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600"><i data-lucide="map-pin" class="h-5 w-5"></i></span>
+                <div><p class="font-semibold text-slate-900">Main campus</p><p class="text-slate-500">1200 Northfield Ave, Boston, MA 02118</p></div>
+              </li>
+              <li class="flex gap-4">
+                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600"><i data-lucide="phone" class="h-5 w-5"></i></span>
+                <div><p class="font-semibold text-slate-900">Appointments</p><a href="tel:+16175550142" class="text-slate-500 hover:text-brand-600">(617) 555-0142</a></div>
+              </li>
+              <li class="flex gap-4">
+                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600"><i data-lucide="mail" class="h-5 w-5"></i></span>
+                <div><p class="font-semibold text-slate-900">Email</p><a href="mailto:care@northfieldmed.org" class="text-slate-500 hover:text-brand-600">care@northfieldmed.org</a></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="reveal rounded-3xl bg-white p-7 shadow-card ring-1 ring-slate-100" style="--delay:260ms">
+            <h2 class="flex items-center gap-2 font-display text-lg font-bold text-slate-900"><i data-lucide="clock" class="h-5 w-5 text-brand-600"></i> Clinic hours</h2>
+            <dl class="mt-5 divide-y divide-slate-100 text-sm">
+              <div class="flex justify-between py-3"><dt class="text-slate-500">Monday – Friday</dt><dd class="font-semibold text-slate-900">8:00 AM – 8:00 PM</dd></div>
+              <div class="flex justify-between py-3"><dt class="text-slate-500">Saturday</dt><dd class="font-semibold text-slate-900">9:00 AM – 5:00 PM</dd></div>
+              <div class="flex justify-between py-3"><dt class="text-slate-500">Sunday</dt><dd class="font-semibold text-red-500">Closed</dd></div>
+              <div class="flex justify-between py-3"><dt class="text-slate-500">Emergency Room</dt><dd class="flex items-center gap-1.5 font-semibold text-mint-700"><span class="pulse-dot h-2 w-2 rounded-full bg-mint-500"></span> Open 24/7</dd></div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ WHAT TO EXPECT ============ -->
+    <section class="bg-white py-24">
+      <div class="container">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">How it works</p>
+          <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">What happens after you book</h2>
+        </div>
+        <ol class="reveal mt-14 grid gap-8 md:grid-cols-3">
+          <li class="relative rounded-2xl border border-slate-100 bg-slate-50/60 p-8">
+            <span class="font-display text-5xl font-extrabold text-brand-100">01</span>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">We confirm your slot</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">A care coordinator reviews your request and confirms by phone or email within 2 business hours.</p>
+          </li>
+          <li class="relative rounded-2xl border border-slate-100 bg-slate-50/60 p-8">
+            <span class="font-display text-5xl font-extrabold text-brand-100">02</span>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">Prepare for your visit</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Bring a photo ID, insurance card and any previous medical records or current medications list.</p>
+          </li>
+          <li class="relative rounded-2xl border border-slate-100 bg-slate-50/60 p-8">
+            <span class="font-display text-5xl font-extrabold text-brand-100">03</span>
+            <h3 class="mt-4 font-display text-lg font-bold text-slate-900">Meet your specialist</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Arrive 15 minutes early. Results and follow-ups will be available in your patient portal.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ FAQ + MAP ============ -->
+    <section class="py-24">
+      <div class="container grid gap-12 lg:grid-cols-2">
+        <div class="reveal">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">FAQ</p>
+          <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Frequently asked questions</h2>
+
+          <div class="mt-8 space-y-3">
+            <div class="faq-item rounded-2xl bg-white ring-1 ring-slate-100">
+              <button type="button" data-faq-trigger aria-expanded="false" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-semibold text-slate-900">
+                Do I need a referral to see a specialist?
+                <i data-lucide="chevron-down" class="faq-icon h-5 w-5 shrink-0 text-slate-400"></i>
+              </button>
+              <div class="faq-panel"><div><p class="px-6 pb-5 text-sm leading-relaxed text-slate-600">Most specialists can be booked directly. Some insurance plans require a referral from your primary care physician, so please check your policy or call us and we'll verify for you.</p></div></div>
+            </div>
+            <div class="faq-item rounded-2xl bg-white ring-1 ring-slate-100">
+              <button type="button" data-faq-trigger aria-expanded="false" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-semibold text-slate-900">
+                Which insurance plans do you accept?
+                <i data-lucide="chevron-down" class="faq-icon h-5 w-5 shrink-0 text-slate-400"></i>
+              </button>
+              <div class="faq-panel"><div><p class="px-6 pb-5 text-sm leading-relaxed text-slate-600">We accept over 40 major providers including Medicare, Medicaid, Blue Cross Blue Shield, Aetna, Cigna and UnitedHealthcare. Self-pay options are also available.</p></div></div>
+            </div>
+            <div class="faq-item rounded-2xl bg-white ring-1 ring-slate-100">
+              <button type="button" data-faq-trigger aria-expanded="false" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-semibold text-slate-900">
+                Can I reschedule or cancel my appointment?
+                <i data-lucide="chevron-down" class="faq-icon h-5 w-5 shrink-0 text-slate-400"></i>
+              </button>
+              <div class="faq-panel"><div><p class="px-6 pb-5 text-sm leading-relaxed text-slate-600">Yes. You can reschedule or cancel up to 24 hours in advance through the patient portal or by calling (617) 555-0142, free of charge.</p></div></div>
+            </div>
+            <div class="faq-item rounded-2xl bg-white ring-1 ring-slate-100">
+              <button type="button" data-faq-trigger aria-expanded="false" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-semibold text-slate-900">
+                Do you offer telehealth consultations?
+                <i data-lucide="chevron-down" class="faq-icon h-5 w-5 shrink-0 text-slate-400"></i>
+              </button>
+              <div class="faq-panel"><div><p class="px-6 pb-5 text-sm leading-relaxed text-slate-600">Yes. Many follow-ups and general consultations can be done by secure video call. Mention it in the "Reason for visit" field and we'll arrange it.</p></div></div>
+            </div>
+            <div class="faq-item rounded-2xl bg-white ring-1 ring-slate-100">
+              <button type="button" data-faq-trigger aria-expanded="false" class="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-semibold text-slate-900">
+                Is parking available at the hospital?
+                <i data-lucide="chevron-down" class="faq-icon h-5 w-5 shrink-0 text-slate-400"></i>
+              </button>
+              <div class="faq-panel"><div><p class="px-6 pb-5 text-sm leading-relaxed text-slate-600">Free patient parking is available in Garage B, directly connected to the main lobby. Valet service is offered at the main entrance on weekdays.</p></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--delay:120ms">
+          <div class="h-full min-h-[420px] overflow-hidden rounded-3xl bg-slate-200 shadow-card ring-1 ring-slate-100">
+            <iframe title="Northfield Medical Center location map"
+                    src="https://maps.google.com/maps?q=Boston%20Medical%20Center%2C%20Boston%2C%20MA&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    class="h-full min-h-[420px] w-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-slate-950 text-slate-400">
+    <div class="container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-600 to-mint-500 text-white">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>
+          </span>
+          <span class="leading-tight">
+            <span class="block font-display text-lg font-extrabold text-white">Northfield</span>
+            <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-400">Medical Center</span>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-relaxed">A non-profit, JCI-accredited hospital delivering compassionate, evidence-based care to our community since 1987.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#" aria-label="Facebook" class="grid h-10 w-10 place-items-center rounded-lg bg-white/5 transition hover:bg-brand-600 hover:text-white"><i data-lucide="facebook" class="h-4 w-4"></i></a>
+          <a href="#" aria-label="Instagram" class="grid h-10 w-10 place-items-center rounded-lg bg-white/5 transition hover:bg-brand-600 hover:text-white"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+          <a href="#" aria-label="LinkedIn" class="grid h-10 w-10 place-items-center rounded-lg bg-white/5 transition hover:bg-brand-600 hover:text-white"><i data-lucide="linkedin" class="h-4 w-4"></i></a>
+          <a href="#" aria-label="YouTube" class="grid h-10 w-10 place-items-center rounded-lg bg-white/5 transition hover:bg-brand-600 hover:text-white"><i data-lucide="youtube" class="h-4 w-4"></i></a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Quick Links</h3>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a href="index.html#about" class="hover:text-white">About Us</a></li>
+          <li><a href="index.html#doctors" class="hover:text-white">Find a Doctor</a></li>
+          <li><a href="appointment.html" class="hover:text-white">Book Appointment</a></li>
+          <li><a href="#" class="hover:text-white">Patient Portal</a></li>
+          <li><a href="#" class="hover:text-white">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Departments</h3>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a href="appointment.html?department=cardiology" class="hover:text-white">Cardiology</a></li>
+          <li><a href="appointment.html?department=neurology" class="hover:text-white">Neurology</a></li>
+          <li><a href="appointment.html?department=pediatrics" class="hover:text-white">Pediatrics</a></li>
+          <li><a href="appointment.html?department=orthopedics" class="hover:text-white">Orthopedics</a></li>
+          <li><a href="appointment.html?department=oncology" class="hover:text-white">Oncology</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-4">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Health Newsletter</h3>
+        <p class="mt-5 text-sm">Monthly wellness tips and hospital news. No spam, ever.</p>
+        <form data-newsletter class="mt-4 flex gap-2" novalidate>
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <input id="newsletter-email" type="email" required placeholder="you@example.com" class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
+          <button type="submit" class="shrink-0 rounded-xl bg-brand-600 px-5 text-sm font-semibold text-white transition hover:bg-brand-500">Subscribe</button>
+        </form>
+        <p data-newsletter-msg class="mt-2 hidden text-sm"></p>
+        <ul class="mt-6 space-y-2 text-sm">
+          <li class="flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4 text-brand-400"></i> 1200 Northfield Ave, Boston, MA 02118</li>
+          <li class="flex items-center gap-2"><i data-lucide="phone" class="h-4 w-4 text-brand-400"></i> (617) 555-0142</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="container flex flex-col items-center justify-between gap-4 py-6 text-xs sm:flex-row">
+        <p>© <span data-year></span> Northfield Medical Center. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white">Privacy Policy</a>
+          <a href="#" class="hover:text-white">Terms of Use</a>
+          <a href="#" class="hover:text-white">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SUCCESS MODAL ============ -->
+  <div id="success-modal" class="modal fixed inset-0 z-[60] items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-backdrop absolute inset-0 bg-slate-950/60 backdrop-blur-sm" data-modal-close></div>
+    <div class="modal-panel relative w-full max-w-md rounded-3xl bg-white p-8 text-center shadow-2xl">
+      <span class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-mint-50 text-mint-600 ring-8 ring-mint-50/50">
+        <i data-lucide="check" class="h-8 w-8"></i>
+      </span>
+      <h2 id="modal-title" class="mt-6 font-display text-2xl font-bold text-slate-900">Request received!</h2>
+      <p class="mt-2 text-sm text-slate-500">Thank you, <strong data-summary="name" class="text-slate-800"></strong>. We'll confirm your appointment within 2 business hours.</p>
+
+      <dl class="mt-6 space-y-3 rounded-2xl bg-slate-50 p-5 text-left text-sm">
+        <div class="flex justify-between gap-4"><dt class="text-slate-500">Reference</dt><dd class="font-mono font-semibold text-brand-700" data-summary="ref"></dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-slate-500">Department</dt><dd class="text-right font-semibold text-slate-900" data-summary="department"></dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-slate-500">Doctor</dt><dd class="text-right font-semibold text-slate-900" data-summary="doctor"></dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-slate-500">Date</dt><dd class="text-right font-semibold text-slate-900" data-summary="date"></dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-slate-500">Time</dt><dd class="text-right font-semibold text-slate-900" data-summary="time"></dd></div>
+      </dl>
+
+      <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+        <a href="index.html" class="flex-1 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Back to home</a>
+        <button type="button" data-modal-close class="flex-1 rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="back-to-top" type="button" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 grid h-12 w-12 place-items-center rounded-full bg-brand-600 text-white shadow-lg shadow-brand-600/30 hover:bg-brand-700">
+    <i data-lucide="arrow-up" class="h-5 w-5"></i>
+  </button>
+</body>
+</html>

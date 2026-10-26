@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Northfield Medical Center — Custom Styles
+   Complements Tailwind utilities with animations & component styles
+   ========================================================================== */
+
+:root {
+  --brand-500: #0c8de9;
+  --brand-600: #006fc7;
+  --brand-700: #0159a1;
+  --danger: #dc2626;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+html { -webkit-font-smoothing: antialiased; }
+body { text-rendering: optimizeLegibility; }
+::selection { background: #b9dffd; color: #072849; }
+
+/* ---------- Header ---------- */
+.site-header { transition: box-shadow 0.3s ease, background-color 0.3s ease; }
+.site-header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 30px -15px rgba(7, 40, 73, 0.2);
+}
+
+/* ---------- Decorative backgrounds ---------- */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(12, 141, 233, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12, 141, 233, 0.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.bg-dots-light {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+  transition-delay: var(--delay, 0ms);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+
+/* ---------- Floating cards ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.animate-float         { animation: float 6s ease-in-out infinite; }
+.animate-float-delayed { animation: float 6s ease-in-out 1.5s infinite; }
+
+/* ---------- Live pulse indicator ---------- */
+.pulse-dot { position: relative; display: inline-block; }
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: inherit;
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes ping { 75%, 100% { transform: scale(2.4); opacity: 0; } }
+
+/* ---------- Forms ---------- */
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+.form-input {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  padding: 0.8rem 1rem;
+  font-size: 0.9375rem;
+  color: #0f172a;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.form-input::placeholder { color: #94a3b8; }
+.form-input:hover:not(:disabled) { border-color: #cbd5e1; }
+.form-input:focus {
+  outline: none;
+  border-color: var(--brand-500);
+  box-shadow: 0 0 0 4px rgba(12, 141, 233, 0.15);
+}
+.form-input:disabled { background-color: #f8fafc; color: #94a3b8; cursor: not-allowed; }
+.form-input.is-invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+}
+select.form-input {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+}
+
+.field-error {
+  display: none;
+  margin-top: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--danger);
+}
+.field-error.is-shown { display: block; animation: shake 0.3s ease; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-3px); }
+  75%      { transform: translateX(3px); }
+}
+
+/* Time slot pills (paired with Tailwind's `peer` radio) */
+.time-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+.time-slot:hover { border-color: #b9dffd; color: var(--brand-700); }
+.peer:checked + .time-slot {
+  background: var(--brand-600);
+  border-color: var(--brand-600);
+  color: #fff;
+  box-shadow: 0 8px 20px -8px rgba(0, 111, 199, 0.6);
+}
+.peer:focus-visible + .time-slot { box-shadow: 0 0 0 4px rgba(12, 141, 233, 0.2); }
+.time-group-invalid .time-slot { border-color: #fca5a5; }
+
+/* Spinner */
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 9999px;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- FAQ accordion ---------- */
+.faq-item { transition: box-shadow 0.25s ease; }
+.faq-item.is-open { box-shadow: 0 12px 30px -16px rgba(7, 40, 73, 0.2); }
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s var(--ease-out);
+}
+.faq-panel > div { overflow: hidden; }
+.faq-item.is-open .faq-panel { grid-template-rows: 1fr; }
+.faq-icon { transition: transform 0.3s ease, color 0.3s ease; }
+.faq-item.is-open .faq-icon { transform: rotate(180deg); color: var(--brand-600); }
+
+/* ---------- Modal ---------- */
+.modal { display: none; }
+.modal.is-open { display: flex; }
+.modal.is-open .modal-backdrop { animation: fadeIn 0.25s ease both; }
+.modal.is-open .modal-panel { animation: popIn 0.35s var(--ease-out) both; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Back to top ---------- */
+#back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background-color 0.2s;
+}
+#back-to-top.is-visible { opacity: 1; visibility: visible; transform: none; }
+
+/* ---------- Accessibility: reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

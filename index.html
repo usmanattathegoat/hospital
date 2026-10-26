@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northfield Medical Center | Compassionate Care, Advanced Medicine</title>
+  <meta name="description" content="Northfield Medical Center offers world-class specialists, 24/7 emergency care and advanced diagnostics. Book your appointment online today." />
+  <meta name="theme-color" content="#006fc7" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS + project config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Icons + App scripts -->
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body class="bg-white font-sans text-slate-700 antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+  <!-- ============ TOP BAR ============ -->
+  <div class="hidden bg-brand-950 text-brand-100 md:block">
+    <div class="container flex h-10 items-center justify-between text-xs">
+      <div class="flex items-center gap-6">
+        <a href="tel:+18005550199" class="flex items-center gap-1.5 font-semibold text-white hover:text-mint-300">
+          <i data-lucide="phone-call" class="h-3.5 w-3.5"></i> Emergency: (800) 555-0199
+        </a>
+        <a href="mailto:care@northfieldmed.org" class="flex items-center gap-1.5 hover:text-white">
+          <i data-lucide="mail" class="h-3.5 w-3.5"></i> care@northfieldmed.org
+        </a>
+        <span class="hidden items-center gap-1.5 lg:flex">
+          <i data-lucide="clock" class="h-3.5 w-3.5"></i> Clinics Mon–Sat 8 AM – 8 PM · ER open 24/7
+        </span>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="#" class="hover:text-white">Patient Portal</a>
+        <a href="#" class="hover:text-white">Careers</a>
+        <a href="#" class="hover:text-white">Pay a Bill</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header id="site-header" class="site-header sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur-lg">
+    <nav class="container flex h-[72px] items-center justify-between" aria-label="Main navigation">
+      <a href="index.html" class="flex items-center gap-2.5" aria-label="Northfield Medical Center home">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-600 to-mint-500 text-white shadow-soft">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>
+        </span>
+        <span class="leading-tight">
+          <span class="block font-display text-lg font-extrabold text-slate-900">Northfield</span>
+          <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-600">Medical Center</span>
+        </span>
+      </a>
+
+      <ul class="hidden items-center gap-1 lg:flex">
+        <li><a href="index.html" aria-current="page" class="rounded-lg px-4 py-2 text-sm font-semibold text-brand-700">Home</a></li>
+        <li><a href="#services" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">Departments</a></li>
+        <li><a href="#about" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">About Us</a></li>
+        <li><a href="#doctors" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">Our Doctors</a></li>
+        <li><a href="appointment.html#contact" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <a href="appointment.html" class="hidden items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200 sm:inline-flex">
+          <i data-lucide="calendar-check" class="h-4 w-4"></i> Book Appointment
+        </a>
+        <button id="menu-toggle" type="button" class="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 text-slate-700 lg:hidden" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
+          <span data-icon-open><i data-lucide="menu" class="h-5 w-5"></i></span>
+          <span data-icon-close class="hidden"><i data-lucide="x" class="h-5 w-5"></i></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden border-t border-slate-100 bg-white lg:hidden">
+      <ul class="container space-y-1 py-4">
+        <li><a href="index.html" class="block rounded-lg bg-brand-50 px-4 py-3 font-semibold text-brand-700">Home</a></li>
+        <li><a href="#services" class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-50">Departments</a></li>
+        <li><a href="#about" class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-50">About Us</a></li>
+        <li><a href="#doctors" class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-50">Our Doctors</a></li>
+        <li><a href="appointment.html#contact" class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-50">Contact</a></li>
+        <li class="pt-2"><a href="appointment.html" class="flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-4 py-3 font-semibold text-white">
+          <i data-lucide="calendar-check" class="h-4 w-4"></i> Book Appointment</a></li>
+        <li><a href="tel:+18005550199" class="flex items-center justify-center gap-2 rounded-xl bg-red-50 px-4 py-3 font-semibold text-red-600">
+          <i data-lucide="phone-call" class="h-4 w-4"></i> Emergency: (800) 555-0199</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]"></div>
+      <div class="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-mint-200/40 blur-3xl"></div>
+      <div class="pointer-events-none absolute -left-40 top-40 h-[380px] w-[380px] rounded-full bg-brand-200/40 blur-3xl"></div>
+
+      <div class="container relative grid items-center gap-14 pb-20 pt-14 lg:grid-cols-2 lg:pb-28 lg:pt-20">
+        <div class="reveal">
+          <span class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-1.5 text-xs font-semibold text-brand-700 shadow-sm">
+            <span class="pulse-dot h-2 w-2 rounded-full bg-mint-500"></span>
+            JCI Accredited · Serving families since 1987
+          </span>
+
+          <h1 class="mt-6 font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.6rem]">
+            Exceptional care,<br class="hidden sm:block" />
+            <span class="bg-gradient-to-r from-brand-600 to-mint-500 bg-clip-text text-transparent">close to home.</span>
+          </h1>
+
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+            From routine check-ups to complex surgery, our 250+ board-certified specialists combine advanced medicine with genuine compassion, so you and your family always feel cared for.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="appointment.html" class="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:-translate-y-0.5 hover:bg-brand-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200">
+              Book an Appointment <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+            <a href="#services" class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-7 py-4 text-sm font-semibold text-slate-800 transition hover:border-brand-200 hover:text-brand-700">
+              <i data-lucide="layout-grid" class="h-4 w-4"></i> Explore Departments
+            </a>
+          </div>
+
+          <div class="mt-10 flex items-center gap-4">
+            <div class="flex -space-x-3">
+              <span class="grid h-10 w-10 place-items-center rounded-full bg-brand-600 text-xs font-bold text-white ring-4 ring-white">JM</span>
+              <span class="grid h-10 w-10 place-items-center rounded-full bg-mint-600 text-xs font-bold text-white ring-4 ring-white">AK</span>
+              <span class="grid h-10 w-10 place-items-center rounded-full bg-amber-500 text-xs font-bold text-white ring-4 ring-white">RL</span>
+              <span class="grid h-10 w-10 place-items-center rounded-full bg-slate-800 text-xs font-bold text-white ring-4 ring-white">+12k</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-0.5 text-amber-400">
+                <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+              </div>
+              <p class="mt-1 text-sm text-slate-600"><strong class="text-slate-900">4.9/5</strong> from 12,400+ patient reviews</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="reveal relative" style="--delay:150ms">
+          <div class="relative overflow-hidden rounded-[2rem] bg-slate-200 shadow-2xl shadow-brand-900/10 ring-1 ring-slate-900/5">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1100&q=80"
+                 alt="Doctor consulting with a patient using a digital tablet"
+                 class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-[4/5]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-950/30 to-transparent"></div>
+          </div>
+
+          <div class="animate-float absolute -left-6 top-10 hidden items-center gap-3 rounded-2xl bg-white p-4 shadow-soft ring-1 ring-slate-100 sm:flex">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-red-50 text-red-600"><i data-lucide="ambulance" class="h-5 w-5"></i></span>
+            <div>
+              <p class="text-sm font-bold text-slate-900">24/7 Emergency</p>
+              <p class="text-xs text-slate-500">Avg. wait time: 12 min</p>
+            </div>
+          </div>
+
+          <div class="animate-float-delayed absolute -right-4 bottom-10 hidden w-64 rounded-2xl bg-white p-4 shadow-soft ring-1 ring-slate-100 sm:block">
+            <div class="flex items-center justify-between">
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Next available</p>
+              <span class="rounded-full bg-mint-50 px-2 py-0.5 text-[11px] font-semibold text-mint-700">Today</span>
+            </div>
+            <p class="mt-2 font-display text-lg font-bold text-slate-900">2:30 PM · Cardiology</p>
+            <a href="appointment.html?department=cardiology" class="mt-3 flex items-center justify-center gap-1.5 rounded-lg bg-brand-50 py-2 text-xs font-semibold text-brand-700 hover:bg-brand-100">
+              Reserve slot <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick access -->
+      <div class="container relative pb-20">
+        <div class="reveal grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <a href="#doctors" class="group flex items-start gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition hover:-translate-y-1 hover:border-brand-100 hover:shadow-soft">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white"><i data-lucide="user-round-search" class="h-5 w-5"></i></span>
+            <span><span class="block font-semibold text-slate-900">Find a Doctor</span><span class="mt-1 block text-sm text-slate-500">Search by specialty or name</span></span>
+          </a>
+          <a href="appointment.html" class="group flex items-start gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition hover:-translate-y-1 hover:border-brand-100 hover:shadow-soft">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white"><i data-lucide="calendar-plus" class="h-5 w-5"></i></span>
+            <span><span class="block font-semibold text-slate-900">Book Online</span><span class="mt-1 block text-sm text-slate-500">Confirmed within 2 hours</span></span>
+          </a>
+          <a href="tel:+18005550199" class="group flex items-start gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition hover:-translate-y-1 hover:border-red-100 hover:shadow-soft">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-red-50 text-red-600 transition group-hover:bg-red-600 group-hover:text-white"><i data-lucide="siren" class="h-5 w-5"></i></span>
+            <span><span class="block font-semibold text-slate-900">Emergency Care</span><span class="mt-1 block text-sm text-slate-500">Open 24 hours, 365 days</span></span>
+          </a>
+          <a href="#" class="group flex items-start gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-card transition hover:-translate-y-1 hover:border-brand-100 hover:shadow-soft">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white"><i data-lucide="file-heart" class="h-5 w-5"></i></span>
+            <span><span class="block font-semibold text-slate-900">Patient Portal</span><span class="mt-1 block text-sm text-slate-500">Results, records &amp; billing</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section aria-label="Hospital in numbers" class="bg-brand-950">
+      <div class="bg-dots-light">
+        <div class="container grid grid-cols-2 gap-y-10 py-14 text-center lg:grid-cols-4">
+          <div>
+            <p class="font-display text-4xl font-extrabold text-white lg:text-5xl" data-count="35" data-suffix="+">0</p>
+            <p class="mt-2 text-sm font-medium text-brand-200">Years of excellence</p>
+          </div>
+          <div>
+            <p class="font-display text-4xl font-extrabold text-white lg:text-5xl" data-count="250" data-suffix="+">0</p>
+            <p class="mt-2 text-sm font-medium text-brand-200">Board-certified specialists</p>
+          </div>
+          <div>
+            <p class="font-display text-4xl font-extrabold text-white lg:text-5xl" data-count="120000" data-suffix="+">0</p>
+            <p class="mt-2 text-sm font-medium text-brand-200">Patients treated yearly</p>
+          </div>
+          <div>
+            <p class="font-display text-4xl font-extrabold text-white lg:text-5xl" data-count="98" data-suffix="%">0</p>
+            <p class="mt-2 text-sm font-medium text-brand-200">Patient satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEPARTMENTS ============ -->
+    <section id="services" class="scroll-mt-24 py-24">
+      <div class="container">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">Centers of Excellence</p>
+          <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Specialized care for every stage of life</h2>
+          <p class="mt-4 text-lg text-slate-600">Multidisciplinary teams, the latest technology and evidence-based treatment, all under one roof.</p>
+        </div>
+
+        <div class="reveal mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Card -->
+          <article class="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-red-50 text-red-500 transition group-hover:scale-110"><i data-lucide="heart-pulse" class="h-6 w-6"></i></span>
+            <h3 class="mt-6 font-display text-xl font-bold text-slate-900">Cardiology</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Heart screenings, interventional cardiology, cardiac surgery and rehabilitation programs.</p>
+            <a href="appointment.html?department=cardiology" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700">Book cardiology <i data-lucide="arrow-right" class="h-4 w-4 transition group-hover:translate-x-1"></i></a>
+          </article>
+
+          <article class="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-violet-50 text-violet-500 transition group-hover:scale-110"><i data-lucide="brain" class="h-6 w-6"></i></span>
+            <h3 class="mt-6 font-display text-xl font-bold text-slate-900">Neurology</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Comprehensive care for stroke, epilepsy, migraine and neurodegenerative conditions.</p>
+            <a href="appointment.html?department=neurology" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700">Book neurology <i data-lucide="arrow-right" class="h-4 w-4 transition group-hover:translate-x-1"></i></a>
+          </article>
+
+          <article class="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-amber-50 text-amber-500 transition group-hover:scale-110"><i data-lucide="baby" class="h-6 w-6"></i></span>
+            <h3 class="mt-6 font-display text-xl font-bold text-slate-900">Pediatrics</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Child-friendly care from newborn checkups to adolescent medicine and vaccinations.</p>
+            <a href="appointment.html?department=pediatrics" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700">Book pediatrics <i data-lucide="arrow-right" class="h-4 w-4 transition group-hover:translate-x-1"></i></a>
+          </article>
+
+          <article class="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-sky-50 text-sky-500 transition group-hover:scale-110"><i data-lucide="bone" class="h-6 w-6"></i></span>
+            <h3 class="mt-6 font-display text-xl font-bold text-slate-900">Orthopedics</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Joint replacement, sports medicine, spine care and minimally invasive surgery.</p>
+            <a href="appointment.html?department=orthopedics" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700">Book orthopedics <i data-lucide="arrow-right" class="h-4 w-4 transition group-hover:translate-x-1"></i></a>
+          </article>
+
+          <article class="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-pink-50 text-pink-500 transition group-hover:scale-110"><i data-lucide="ribbon" class="h-6 w-6"></i></span>
+            <h3 class="mt-6 font-display text-xl font-bold text-slate-900">Oncology</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Personalized cancer treatment including chemotherapy, radiation and immunotherapy.</p>
+            <a href="appointment.html?department=oncology" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700">Book oncology <i data-lucide="arrow-right" class="h-4 w-4 transition group-hover:translate-x-1"></i></a>
+          </article>
+
+          <article class="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-mint-50 text-mint-600 transition group-hover:scale-110"><i data-lucide="scan-line" class="h-6 w-6"></i></span>
+            <h3 class="mt-6 font-display text-xl font-bold text-slate-900">Diagnostics &amp; Imaging</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">3T MRI, low-dose CT, digital X-ray, ultrasound and a fully automated laboratory.</p>
+            <a href="appointment.html?department=diagnostics" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700">Book diagnostics <i data-lucide="arrow-right" class="h-4 w-4 transition group-hover:translate-x-1"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT / WHY US ============ -->
+    <section id="about" class="scroll-mt-24 bg-slate-50 py-24">
+      <div class="container grid items-center gap-16 lg:grid-cols-2">
+        <div class="reveal relative">
+          <div class="grid grid-cols-2 gap-4">
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=700&q=80" alt="Modern hospital building exterior" loading="lazy" class="h-72 w-full rounded-3xl bg-slate-200 object-cover sm:h-96" />
+            <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=700&q=80" alt="Clean, modern hospital corridor" loading="lazy" class="mt-12 h-72 w-full rounded-3xl bg-slate-200 object-cover sm:h-96" />
+          </div>
+          <div class="absolute -bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-soft ring-1 ring-slate-100">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-amber-50 text-amber-500"><i data-lucide="award" class="h-5 w-5"></i></span>
+            <div>
+              <p class="text-sm font-bold text-slate-900">Top 50 Hospitals</p>
+              <p class="text-xs text-slate-500">National Health Ranking 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--delay:120ms">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">Why Northfield</p>
+          <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Medicine that puts people first</h2>
+          <p class="mt-4 text-lg text-slate-600">For over three decades, we've combined clinical excellence with a warm, human approach. Every decision starts with one question: <em>what's best for the patient?</em></p>
+
+          <ul class="mt-10 grid gap-6 sm:grid-cols-2">
+            <li class="flex gap-4">
+              <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600 text-white"><i data-lucide="shield-check" class="h-5 w-5"></i></span>
+              <div><h3 class="font-semibold text-slate-900">Board-certified experts</h3><p class="mt-1 text-sm text-slate-600">Specialists trained at leading academic institutions.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600 text-white"><i data-lucide="cpu" class="h-5 w-5"></i></span>
+              <div><h3 class="font-semibold text-slate-900">Advanced technology</h3><p class="mt-1 text-sm text-slate-600">Robotic surgery, 3T MRI and digital health records.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600 text-white"><i data-lucide="hand-heart" class="h-5 w-5"></i></span>
+              <div><h3 class="font-semibold text-slate-900">Patient-centered care</h3><p class="mt-1 text-sm text-slate-600">Dedicated care coordinators for every patient.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600 text-white"><i data-lucide="wallet-cards" class="h-5 w-5"></i></span>
+              <div><h3 class="font-semibold text-slate-900">Insurance friendly</h3><p class="mt-1 text-sm text-slate-600">We accept 40+ major insurance providers.</p></div>
+            </li>
+          </ul>
+
+          <a href="appointment.html" class="mt-10 inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-800">
+            Schedule a visit <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DOCTORS ============ -->
+    <section id="doctors" class="scroll-mt-24 py-24">
+      <div class="container">
+        <div class="reveal flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div class="max-w-2xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">Meet Our Specialists</p>
+            <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Doctors you can trust</h2>
+            <p class="mt-4 text-lg text-slate-600">Experienced physicians who listen, explain and partner with you on every decision.</p>
+          </div>
+          <a href="appointment.html" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-brand-200 hover:text-brand-700">
+            View all doctors <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+          </a>
+        </div>
+
+        <div class="reveal mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&h=750&q=80" alt="Dr. Sarah Mitchell" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              <span class="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-brand-700 backdrop-blur">Cardiology</span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-display text-lg font-bold text-slate-900">Dr. Sarah Mitchell</h3>
+              <p class="text-sm text-slate-500">MD, FACC · 18 yrs experience</p>
+              <div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
+                <span class="flex items-center gap-1 text-sm font-semibold text-slate-700"><i data-lucide="star" class="h-4 w-4 fill-amber-400 text-amber-400"></i> 4.9</span>
+                <a href="appointment.html?department=cardiology" class="text-sm font-semibold text-brand-600 hover:text-brand-700">Book visit →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&h=750&q=80" alt="Dr. James Carter" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              <span class="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-brand-700 backdrop-blur">Neurology</span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-display text-lg font-bold text-slate-900">Dr. James Carter</h3>
+              <p class="text-sm text-slate-500">MD, PhD · 15 yrs experience</p>
+              <div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
+                <span class="flex items-center gap-1 text-sm font-semibold text-slate-700"><i data-lucide="star" class="h-4 w-4 fill-amber-400 text-amber-400"></i> 4.8</span>
+                <a href="appointment.html?department=neurology" class="text-sm font-semibold text-brand-600 hover:text-brand-700">Book visit →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&h=750&q=80" alt="Dr. Emily Chen" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              <span class="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-brand-700 backdrop-blur">Pediatrics</span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-display text-lg font-bold text-slate-900">Dr. Emily Chen</h3>
+              <p class="text-sm text-slate-500">MD, FAAP · 12 yrs experience</p>
+              <div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
+                <span class="flex items-center gap-1 text-sm font-semibold text-slate-700"><i data-lucide="star" class="h-4 w-4 fill-amber-400 text-amber-400"></i> 5.0</span>
+                <a href="appointment.html?department=pediatrics" class="text-sm font-semibold text-brand-600 hover:text-brand-700">Book visit →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="relative aspect-[4/5] overflow-hidden bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&h=750&q=80" alt="Dr. Michael Brooks" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              <span class="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-brand-700 backdrop-blur">Orthopedics</span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-display text-lg font-bold text-slate-900">Dr. Michael Brooks</h3>
+              <p class="text-sm text-slate-500">MD, FAAOS · 20 yrs experience</p>
+              <div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-4">
+                <span class="flex items-center gap-1 text-sm font-semibold text-slate-700"><i data-lucide="star" class="h-4 w-4 fill-amber-400 text-amber-400"></i> 4.9</span>
+                <a href="appointment.html?department=orthopedics" class="text-sm font-semibold text-brand-600 hover:text-brand-700">Book visit →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="bg-gradient-to-b from-white to-brand-50/60 py-24">
+      <div class="container">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">Patient Stories</p>
+          <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Trusted by thousands of families</h2>
+        </div>
+
+        <div class="reveal mt-14 grid gap-6 lg:grid-cols-3">
+          <figure class="flex flex-col rounded-2xl bg-white p-8 shadow-card ring-1 ring-slate-100">
+            <i data-lucide="quote" class="h-8 w-8 text-brand-200"></i>
+            <blockquote class="mt-4 flex-1 leading-relaxed text-slate-700">"The cardiology team caught a problem my previous doctors missed. From diagnosis to surgery, everyone explained each step and treated me like family."</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3 border-t border-slate-100 pt-6">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-brand-600 text-sm font-bold text-white">RG</span>
+              <div><p class="font-semibold text-slate-900">Robert Garcia</p><p class="text-sm text-slate-500">Cardiac surgery patient</p></div>
+            </figcaption>
+          </figure>
+
+          <figure class="flex flex-col rounded-2xl bg-brand-600 p-8 text-white shadow-soft">
+            <i data-lucide="quote" class="h-8 w-8 text-brand-300"></i>
+            <blockquote class="mt-4 flex-1 leading-relaxed text-brand-50">"Bringing our newborn to the NICU was terrifying, but the nurses were incredible. They supported us day and night. We'll be forever grateful."</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3 border-t border-white/15 pt-6">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-white text-sm font-bold text-brand-700">AL</span>
+              <div><p class="font-semibold">Amara Lewis</p><p class="text-sm text-brand-200">Parent, Pediatrics &amp; NICU</p></div>
+            </figcaption>
+          </figure>
+
+          <figure class="flex flex-col rounded-2xl bg-white p-8 shadow-card ring-1 ring-slate-100">
+            <i data-lucide="quote" class="h-8 w-8 text-brand-200"></i>
+            <blockquote class="mt-4 flex-1 leading-relaxed text-slate-700">"Booking online took two minutes and I was seen the same day. After my knee replacement I was walking in 48 hours. Truly world-class care."</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3 border-t border-slate-100 pt-6">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-mint-600 text-sm font-bold text-white">DP</span>
+              <div><p class="font-semibold text-slate-900">Diane Porter</p><p class="text-sm text-slate-500">Orthopedics patient</p></div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="py-20">
+      <div class="container">
+        <div class="reveal relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-700 via-brand-600 to-mint-600 px-8 py-14 text-center shadow-2xl shadow-brand-700/20 sm:px-16">
+          <div class="bg-dots-light pointer-events-none absolute inset-0"></div>
+          <div class="relative mx-auto max-w-2xl">
+            <h2 class="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Your health can't wait. Neither should you.</h2>
+            <p class="mt-4 text-lg text-brand-50">Book an appointment online in under two minutes, or call our care team any time.</p>
+            <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <a href="appointment.html" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 text-sm font-semibold text-brand-700 shadow-lg transition hover:-translate-y-0.5">
+                <i data-lucide="calendar-check" class="h-4 w-4"></i> Book Appointment
+              </a>
+              <a href="tel:+18005550199" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20">
+                <i data-lucide="phone" class="h-4 w-4"></i> (800) 555-0199
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-slate-950 text-slate-400">
+    <div class="container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-600 to-mint-500 text-white">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>
+          </span>
+          <span class="leading-tight">
+            <span class="block font-display text-lg font-extrabold text-white">Northfield</span>
+            <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-400">Medical Center</span>
+          </span>
+        </a>
+        <p class="mt-5 max-w-sm text-sm leading-relaxed">A non-profit, JCI-accredited hospital delivering compassionate, evidence-based care to our community since 1987.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#" aria-label="Facebook" class="grid h-10 w-10 place-items-center rounded-lg bg-white/5 transition hover:bg-brand-600 hover:text-white"><i data-lucide="facebook" class="h-4 w-4"></i></a>
+          <a href="#" aria-label="Instagram" class="grid h-10 w-10 place-items-center rounded-lg bg-white/5 transition hover:bg-brand-600 hover:text-white"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+          <a href="#" aria-label="LinkedIn" class="grid h-10 w-10 place-items-center rounded-lg bg-white/5 transition hover:bg-brand-600 hover:text-white"><i data-lucide="linkedin" class="h-4 w-4"></i></a>
+          <a href="#" aria-label="YouTube" class="grid h-10 w-10 place-items-center rounded-lg bg-white/5 transition hover:bg-brand-600 hover:text-white"><i data-lucide="youtube" class="h-4 w-4"></i></a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Quick Links</h3>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a href="#about" class="hover:text-white">About Us</a></li>
+          <li><a href="#doctors" class="hover:text-white">Find a Doctor</a></li>
+          <li><a href="appointment.html" class="hover:text-white">Book Appointment</a></li>
+          <li><a href="#" class="hover:text-white">Patient Portal</a></li>
+          <li><a href="#" class="hover:text-white">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Departments</h3>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a href="appointment.html?department=cardiology" class="hover:text-white">Cardiology</a></li>
+          <li><a href="appointment.html?department=neurology" class="hover:text-white">Neurology</a></li>
+          <li><a href="appointment.html?department=pediatrics" class="hover:text-white">Pediatrics</a></li>
+          <li><a href="appointment.html?department=orthopedics" class="hover:text-white">Orthopedics</a></li>
+          <li><a href="appointment.html?department=oncology" class="hover:text-white">Oncology</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-4">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Health Newsletter</h3>
+        <p class="mt-5 text-sm">Monthly wellness tips and hospital news. No spam, ever.</p>
+        <form data-newsletter class="mt-4 flex gap-2" novalidate>
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <input id="newsletter-email" type="email" required placeholder="you@example.com" class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
+          <button type="submit" class="shrink-0 rounded-xl bg-brand-600 px-5 text-sm font-semibold text-white transition hover:bg-brand-500">Subscribe</button>
+        </form>
+        <p data-newsletter-msg class="mt-2 hidden text-sm"></p>
+        <ul class="mt-6 space-y-2 text-sm">
+          <li class="flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4 text-brand-400"></i> 1200 Northfield Ave, Boston, MA 02118</li>
+          <li class="flex items-center gap-2"><i data-lucide="phone" class="h-4 w-4 text-brand-400"></i> (617) 555-0142</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div class="container flex flex-col items-center justify-between gap-4 py-6 text-xs sm:flex-row">
+        <p>© <span data-year></span> Northfield Medical Center. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white">Privacy Policy</a>
+          <a href="#" class="hover:text-white">Terms of Use</a>
+          <a href="#" class="hover:text-white">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" type="button" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 grid h-12 w-12 place-items-center rounded-full bg-brand-600 text-white shadow-lg shadow-brand-600/30 hover:bg-brand-700">
+    <i data-lucide="arrow-up" class="h-5 w-5"></i>
+  </button>
+</body>
+</html>
